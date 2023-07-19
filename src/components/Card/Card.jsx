@@ -1,11 +1,11 @@
 import styles from "./Card.module.scss";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { MainContext } from "@/store/MainContext";
 const Card = ({ data }) => {
   const { state, dispatch } = useContext(MainContext);
+
   const onHandleDelete = () => {
     dispatch({ type: "REMOVE", payload: data.id });
-    console.log(data.id);
   };
 
   return (

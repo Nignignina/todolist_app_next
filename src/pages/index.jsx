@@ -2,12 +2,14 @@ import { useReducer } from "react";
 import { MainContext } from "@/store/MainContext";
 import Head from "next/head";
 import { initialState } from "@/store/MainContext";
+import MainReducer from "@/store/reducer";
 import CardList from "@/components/CardList";
 import styles from "@/styles/Home.module.css";
 
 export default function Home() {
-  const [state, dispatch] = useReducer(MainContext, { initialState });
-  // const [tododata, setTodoTata ] = usestate({initialState})
+  const [state, dispatch] = useReducer(MainReducer, initialState);
+  // console.log(initialState);
+
   return (
     <>
       <Head>
@@ -17,7 +19,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <MainContext.Provider value={initialState}>
+      <MainContext.Provider value={{ state, dispatch }}>
         <main className={styles.Home}>
           <CardList />
         </main>

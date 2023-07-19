@@ -1,12 +1,16 @@
-// const [state, dispatch] = useReducer(reducer, initialArg, init?)
-import { initialState } from "./MainContext";
-
-function reducer(state, action) {
+export default function MainReducer(state, action) {
+  // console.log(action);
   switch (action.type) {
     case "REMOVE":
       return {
         ...state,
         data: state.data.filter((item) => item.id !== action.payload),
+      };
+
+    case "ADD":
+      return {
+        ...state,
+        data: [...state.data, action.payload],
       };
 
     default:
