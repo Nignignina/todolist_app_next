@@ -1,14 +1,11 @@
-import { useReducer } from "react";
-import { MainContext } from "@/store/MainContext";
 import Head from "next/head";
-import { initialState } from "@/store/MainContext";
-import MainReducer from "@/store/reducer";
+import { app } from "../plugnis/firebase";
+
 import CardList from "@/components/CardList";
-import styles from "@/styles/Home.module.css";
+import styles from "@/styles/Home.module.scss";
 
 export default function Home() {
-  const [state, dispatch] = useReducer(MainReducer, initialState);
-  // console.log(initialState);
+  console.log(app);
 
   return (
     <>
@@ -19,11 +16,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <MainContext.Provider value={{ state, dispatch }}>
-        <main className={styles.Home}>
-          <CardList />
-        </main>
-      </MainContext.Provider>
+      <main className={styles.Home}>
+        <CardList />
+      </main>
     </>
   );
 }

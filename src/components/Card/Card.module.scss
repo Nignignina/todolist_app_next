@@ -3,15 +3,23 @@
   width: 400px;
   height: 100px;
   border-radius: 12px;
-  background-color: rgb(239, 239, 239);
+  background-color: rgb(218, 248, 177);
   padding: 10px;
   flex-direction: column;
-
+  color: black;
+  box-shadow: 6px 4px 12px rgb(141, 223, 53);
   .category {
     margin: 5px 0;
     padding: 4px 8px;
     border: 2px solid black;
     border-radius: 15px;
+    font-size: 14px;
+    font-weight: 800;
+  }
+  hr {
+    color: aqua;
+    border: 1px solid rgb(81, 81, 81);
+    width: 100%;
   }
 }
 
@@ -23,5 +31,8 @@
     display: flex;
     gap: 10px;
     align-items: center;
+    width: 45px;
+    height: 45px;
+    padding-right: 20px;
   }
 }
